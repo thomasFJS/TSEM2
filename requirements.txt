@@ -1,0 +1,4 @@
+python3-rpi.gpio
+python3-dev
+manager
+lib
