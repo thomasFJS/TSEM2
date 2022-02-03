@@ -1,34 +1,44 @@
-#!/usr/bin/python3
+from smartcard.CardRequest import CardRequest
+from smartcard.Exceptions import CardRequestTimeoutException
+from smartcard.CardType import AnyCardType
+from smartcard import util
+import time
+import json
 
-import RPi.GPIO as GPIO
+if __name__ == '__main__':
+    # respond to the insertion of any type of smart card
+    card_type = AnyCardType()
 
-import manager.rules_manager as rules_manager
-import manager.game_manager as game_manager
-import lib.helper as helper
-import lib.MFRC522 as MFRC522
-import lib.constants as constants
-
-# create the reader object
-MIFAREReader = MFRC522.MFRC522()
-
-def read_card():
-    """Read RFID card
-
-    Returns:
-        Card: card infos
-    """
-    with open('./json/clients.json') as c:
-        cards = json.load(c)
+    # create the request. Wait for up to x seconds for a card to be attached
+    request = CardRequest(timeout=None, cardType=card_type)
+    with open('./client.json') as c :
+        clients = json.load(c)
         while True:
             time.sleep(0.1)
-            (status, TagType) = MIFAREReader.MFRC522_Request(
-                MIFAREReader.PICC_REQIDL)
-            (status, uid) = MIFAREReader.MFRC522_Anticoll()
-            if status == MIFAREReader.MI_OK:
-                card_id = int(str(uid[0])+str(uid[1])+str(uid[2])+str(uid[3])) #get the card id of the scanned card
-                for card in cards:
-                    if card["card_id"] == card_id:
-                        print(
-                            "Card found")
-                        time.sleep(2)
-                        return card
+            # listen for the card
+            service = None
+            try:
+                service = request.waitforcard()
+            except CardRequestTimeoutException:
+                print("ERROR: No card detected")
+                exit(-1)
+
+            # when a card is attached, open a connection
+            conn = service.connection
+            conn.connect()
+
+            # get and print the ATR and UID of the card
+            get_uid = util.toBytes("FF CA 00 00 00")
+            print("ATR = {}".format(util.toHexString(conn.getATR())))
+            data, sw1, sw2 = conn.transmit(get_uid)
+            uid = util.toHexString(data)
+            status = util.toHexString([sw1, sw2])
+            print("UID = {}\tstatus = {}".format(uid, status))
+            print(data)
+            for client in clients:
+                print(client["client_id"])
+                if client["client_id"] == data:
+                    print("Success")
+                else:
+                    print("Refused")
+            time.sleep(2)

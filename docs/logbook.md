@@ -40,3 +40,9 @@ Sachant qu'un nombre de seconde d'attente doit être défini, je ne pense pas qu
 ## Jeudi 27 Janvier 2022
 
 J'ai discuter un peu avec M.Aigroz par rapport à mon problème avec le lecteur NFC et la connexion avec la carte. Je revois donc toute la documentation et je finis par trouver un moyen de faire fonctionner le lecteur. J'ai réussi à avoir un fichier json contenant les ids des cartes RFID et j'utilise le lecteur pour comparé les ids des cartes scannées avec les ids stockées dans le json. Il faudrait maintenant que j'arrive à intégrer un appel à l'API Polar lorsque je scanne la carte. Depuis les vacances, j'ai eu le temps d'ajouter des données d'entrainements sur les montres Polar que j'avais à disposition. Maintenant le problème avec le lecteur NFC réglé je vais commencer la partie sur l'API Polar et la récupération des données.
+
+## Jeudi 03 Février 2022
+
+J'ai avancé sur la documentation, j'ai ajouter la description du lecteur, la librairie pyscard ainsi que l'API Polar. J'ai commencé à regarder le fonctionnement de l'API pour essayer de récupérer les données d'entrainements quand la carte RFID est scannée. Il me semble que lorsqu'on récupère les données d'entrainements avec l'API on récupère toutes les données du compte, il faut que je regarde si il est pas possible de récupérer seulement les dernières données. 
+
+**Rappel** : L'authentification pour l'API Polar n'est pas pareil que l'authentification avec les cartes RFID. Il y a 1 compte Polar (celui du coach) qui est relié à plusieurs montres et l'authentification des cartes RFID (client) en est une totalement séparée.
