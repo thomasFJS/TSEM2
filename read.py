@@ -2,6 +2,7 @@ from smartcard.CardRequest import CardRequest
 from smartcard.Exceptions import CardRequestTimeoutException
 from smartcard.CardType import AnyCardType
 from smartcard import util
+from accesslink_example import PolarAccessLinkExample
 import time
 import json
 
@@ -11,7 +12,7 @@ if __name__ == '__main__':
 
     # create the request. Wait for up to x seconds for a card to be attached
     request = CardRequest(timeout=None, cardType=card_type)
-    with open('./client.json') as c :
+    with open('./json/clients.json') as c :
         clients = json.load(c)
         while True:
             time.sleep(0.1)
@@ -39,6 +40,7 @@ if __name__ == '__main__':
                 print(client["client_id"])
                 if client["client_id"] == data:
                     print("Success")
+                    PolarAccessLinkExample();
                 else:
                     print("Refused")
             time.sleep(2)

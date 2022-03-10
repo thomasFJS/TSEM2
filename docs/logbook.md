@@ -46,3 +46,16 @@ J'ai discuter un peu avec M.Aigroz par rapport à mon problème avec le lecteur 
 J'ai avancé sur la documentation, j'ai ajouter la description du lecteur, la librairie pyscard ainsi que l'API Polar. J'ai commencé à regarder le fonctionnement de l'API pour essayer de récupérer les données d'entrainements quand la carte RFID est scannée. Il me semble que lorsqu'on récupère les données d'entrainements avec l'API on récupère toutes les données du compte, il faut que je regarde si il est pas possible de récupérer seulement les dernières données. 
 
 **Rappel** : L'authentification pour l'API Polar n'est pas pareil que l'authentification avec les cartes RFID. Il y a 1 compte Polar (celui du coach) qui est relié à plusieurs montres et l'authentification des cartes RFID (client) en est une totalement séparée.
+
+## Jeudi 10 Février 2022 
+Nous avons réalisé une présentation intermédiaire pour montrer l'avancement de nos projets. Suite à cette présentation, je réalise que jusque là je n'ai fait que de la recherche ou quelques essais mais je n'ai pas encore de POC concrèt.
+
+## Jeudi 24 Février 2022
+
+En m'aidant de la doc Polar, je vais créer un objet qui me permettra de récupérer les datas. J'ajouterai ensuite l'objet au programme qui me permet de vérifier les cartes RFID pour récupérer les données lorsqu'on s'identifie avec la carte RFID. Je vais également créer une base de données pour enregistrer quelques données. 
+
+## Jeudi 3 Mars 2022 
+Malade (Covid-19)
+
+## Jeudi 10 Mars 2022
+Le rendu du projet est fixé à la semaine prochaine. J'ai fait l'update du firmware de la montre Polar. 
