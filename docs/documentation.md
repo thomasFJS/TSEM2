@@ -20,6 +20,7 @@ Je dois utiliser un lecteur de carte à puce et l'API Polar Accesslink pour réc
 * Visual Studio Code
 * Mkdocs (Documentation)
 * NFC Reader ACR122U
+* Polar Accesslink API
 
 ##### NFC Reader ACR122U
 
@@ -41,6 +42,17 @@ Architecture pyscard :
 * smartcard.scard est un module d'extension enveloppant l'API WinSCard (Les composants de base smartcard) aussi connue sous le nom PC/SC (Personal computer / Smart Card)
 * smartcard est un framework Python construit à partir de l'API PC/SC
 
+###### Installation
+Pour installer la librairie **pyscard** sur Windows 10, il faut au préalable installer [SWIG](http://www.swig.org/) et l'ajouter directement au PATH. Il faut ensuite installer Visual C++ version 14.0 ou plus récente (directement installable depuis le Visual Studio Installer).
+
+
+##### SWIG
+![Swig](./images/swig.png)
+
+SWIG est un outil logiciel open source qui permet de connecter des logiciels ou librairies écrites en C/C++ avec des langages de scripts tels que : *Perl*, *Python*, *Ruby*, *PHP* ou d'autres langages de programmation comme *Java* ou *C#*.
+
+
+
 ##### Polar Accesslink API 
 ![Polar](./images/polar.png)
 
@@ -61,7 +73,7 @@ Fonctionnalités de base d'Accesslink :
 | Annexes               | Contients des exemples et des détails sur l'interface de l'application |    
 
 #### Environnement de développement
-Afin de développer mon application, j'ai choisi d'utiliser [VNC Viewer](https://www.realvnc.com/fr/connect/download/viewer/) en premier lieu pour me permettre d'avoir accès au CrowPi depuis Windows. Ensuite, j'ai choisi d'utiliser l'extension [VsCode Remote-SSH](https://code.visualstudio.com/docs/remote/ssh) pour me connecter en SSH au CrowPi et ainsi manipuler les fichier directement depuis VSCode
+Pour l'environnement de développement, j'ai utilisé Visual Studio Code.
 #### Modèle de données
 
 ## Analyse fonctionnelle
@@ -79,7 +91,5 @@ Afin de développer mon application, j'ai choisi d'utiliser [VNC Viewer](https:/
 |	+-- logbook.md
 +-- mkdocs.yml
 ```
-
-## Tests
 
 ## Conclusion
