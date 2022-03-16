@@ -58,4 +58,4 @@ En m'aidant de la doc Polar, je vais créer un objet qui me permettra de récup�
 Malade (Covid-19)
 
 ## Jeudi 10 Mars 2022
-Le rendu du projet est fixé à la semaine prochaine. J'ai fait l'update du firmware de la montre Polar. 
+Le rendu du projet est fixé à la semaine prochaine. J'ai fait l'update du firmware de la montre Polar. En essayant de lancer le programme chez moi, je me rends compte que je n'avais pas prit en compte quelques "requirements" pour pouvoir utiliser la librairie **pyscard**. Pour pouvoir installer pyscard, il faut préalablement installer [Swig](http://www.swig.org/download.html) et l'ajouter dans le PATH (Variables d'envirronements). Swig étant un outil qui permet de connecter des librairies écrites en C ou en C++ à d'autres langages comme le Python
