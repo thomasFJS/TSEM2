@@ -2,7 +2,7 @@ from smartcard.CardRequest import CardRequest
 from smartcard.Exceptions import CardRequestTimeoutException
 from smartcard.CardType import AnyCardType
 from smartcard import util
-from accesslink_example import PolarAccessLinkExample
+from accesslinkTools import PolarAccessLink
 import time
 import json
 

@@ -1,557 +1,1007 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Documentation technique - Atelier TD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ab47bd">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-7.3.6" name="generator"/>
-<title>Documentation technique - Atelier TD</title>
-<link href="../assets/stylesheets/main.a57b2b03.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
-<meta content="#ab47bd" name="theme-color"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
-<link href="https://unpkg.com/mermaid@8.5.1/dist/mermaid.css" rel="stylesheet"/>
-</head>
-<body data-md-color-accent="" data-md-color-primary="purple" data-md-color-scheme="slate" dir="ltr">
-<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#documentation-technique">
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-technique" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Atelier TD" class="md-header__button md-logo" data-md-component="logo" href=".." title="Atelier TD">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Atelier TD" class="md-header__button md-logo" aria-label="Atelier TD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Atelier TD
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Documentation technique
             
           </span>
-</div>
-</div>
-</div>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Atelier TD" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Atelier TD">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Atelier TD" class="md-nav__button md-logo" aria-label="Atelier TD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
     Atelier TD
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           Documentation technique
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Documentation technique
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rappel-du-cahier-des-charges">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappel-du-cahier-des-charges" class="md-nav__link">
     Rappel du cahier des charges
   </a>
-<nav aria-label="Rappel du cahier des charges" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#introduction">
+  
+    <nav class="md-nav" aria-label="Rappel du cahier des charges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
-<nav aria-label="Introduction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#but-du-projet">
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#but-du-projet" class="md-nav__link">
     But du projet
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contraintes-techniques">
+        
+          <li class="md-nav__item">
+  <a href="#contraintes-techniques" class="md-nav__link">
     Contraintes techniques
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse">
+        
+          <li class="md-nav__item">
+  <a href="#analyse" class="md-nav__link">
     Analyse
   </a>
-<nav aria-label="Analyse" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#technologies">
+  
+    <nav class="md-nav" aria-label="Analyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technologies" class="md-nav__link">
     Technologies
   </a>
-<nav aria-label="Technologies" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nfc-reader-acr122u">
+  
+    <nav class="md-nav" aria-label="Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfc-reader-acr122u" class="md-nav__link">
     NFC Reader ACR122U
   </a>
-<nav aria-label="NFC Reader ACR122U" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rfid">
+  
+    <nav class="md-nav" aria-label="NFC Reader ACR122U">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rfid" class="md-nav__link">
     RFID
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pyscard-librairie-python-smart-card">
+        
+          <li class="md-nav__item">
+  <a href="#pyscard-librairie-python-smart-card" class="md-nav__link">
     Pyscard - Librairie Python Smart card
   </a>
-<nav aria-label="Pyscard - Librairie Python Smart card" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installation">
+  
+    <nav class="md-nav" aria-label="Pyscard - Librairie Python Smart card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
     Installation
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#swig">
+        
+          <li class="md-nav__item">
+  <a href="#swig" class="md-nav__link">
     SWIG
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#polar-accesslink-api">
+        
+          <li class="md-nav__item">
+  <a href="#polar-accesslink-api" class="md-nav__link">
     Polar Accesslink API
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#environnement-de-developpement">
+        
+          <li class="md-nav__item">
+  <a href="#environnement-de-developpement" class="md-nav__link">
     Environnement de développement
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modele-de-donnees">
-    Modèle de données
-  </a>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse-fonctionnelle">
+      
+        <li class="md-nav__item">
+  <a href="#analyse-fonctionnelle" class="md-nav__link">
     Analyse fonctionnelle
   </a>
-<nav aria-label="Analyse fonctionnelle" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interface">
+  
+    <nav class="md-nav" aria-label="Analyse fonctionnelle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
     Interface
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fonctionnalites">
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnalites" class="md-nav__link">
     Fonctionnalités
   </a>
-<nav aria-label="Fonctionnalités" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inscription">
+  
+    <nav class="md-nav" aria-label="Fonctionnalités">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inscription" class="md-nav__link">
     Inscription
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authentification">
+        
+          <li class="md-nav__item">
+  <a href="#authentification" class="md-nav__link">
     Authentification
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enregistrement">
+        
+          <li class="md-nav__item">
+  <a href="#enregistrement" class="md-nav__link">
     Enregistrement
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cas-dutilisation">
+        
+          <li class="md-nav__item">
+  <a href="#cas-dutilisation" class="md-nav__link">
     Cas d'utilisation
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse-organique">
+      
+        <li class="md-nav__item">
+  <a href="#analyse-organique" class="md-nav__link">
     Analyse organique
   </a>
-<nav aria-label="Analyse organique" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#architecture">
+  
+    <nav class="md-nav" aria-label="Analyse organique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
     Architecture
   </a>
-<nav aria-label="Architecture" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arborescence-de-fichier">
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arborescence-de-fichier" class="md-nav__link">
     Arborescence de fichier
   </a>
-<nav aria-label="Arborescence de fichier" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#documentationmd">
+  
+    <nav class="md-nav" aria-label="Arborescence de fichier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentationmd" class="md-nav__link">
     documentation.md
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#logbookmd">
+        
+          <li class="md-nav__item">
+  <a href="#logbookmd" class="md-nav__link">
     logbook.md
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authorizationpy">
+        
+          <li class="md-nav__item">
+  <a href="#authorizationpy" class="md-nav__link">
     authorization.py
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#readpy">
+        
+          <li class="md-nav__item">
+  <a href="#acesslinkpy" class="md-nav__link">
+    acesslink.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsdaily_activitypy" class="md-nav__link">
+    endpoints/daily_activity.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsdaily_activity_transactionpy" class="md-nav__link">
+    endpoints/daily_activity_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsphysical_infopy" class="md-nav__link">
+    endpoints/physical_info.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsphysical_info_transactionpy" class="md-nav__link">
+    endpoints/physical_info_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstraining_datapy" class="md-nav__link">
+    endpoints/training_data.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstraining_data_transactionpy" class="md-nav__link">
+    endpoints/training_data_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointspull_notifications" class="md-nav__link">
+    endpoints/pull_notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstransactionspy" class="md-nav__link">
+    endpoints/transactions.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readpy" class="md-nav__link">
     read.py
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+          <li class="md-nav__item">
+  <a href="#configyml" class="md-nav__link">
+    config.yml
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    requirements.txt
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#conclusion">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
     Conclusion
   </a>
-<nav aria-label="Conclusion" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ameliorations-possibles">
+  
+    <nav class="md-nav" aria-label="Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ameliorations-possibles" class="md-nav__link">
     Améliorations possibles
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bilan-personnel">
+        
+          <li class="md-nav__item">
+  <a href="#bilan-personnel" class="md-nav__link">
     Bilan personnel
   </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../logbook/">
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logbook/" class="md-nav__link">
         Logbook
       </a>
-</li>
-</ul>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rappel-du-cahier-des-charges">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappel-du-cahier-des-charges" class="md-nav__link">
     Rappel du cahier des charges
   </a>
-<nav aria-label="Rappel du cahier des charges" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#introduction">
+  
+    <nav class="md-nav" aria-label="Rappel du cahier des charges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
-<nav aria-label="Introduction" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#but-du-projet">
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#but-du-projet" class="md-nav__link">
     But du projet
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contraintes-techniques">
+        
+          <li class="md-nav__item">
+  <a href="#contraintes-techniques" class="md-nav__link">
     Contraintes techniques
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse">
+        
+          <li class="md-nav__item">
+  <a href="#analyse" class="md-nav__link">
     Analyse
   </a>
-<nav aria-label="Analyse" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#technologies">
+  
+    <nav class="md-nav" aria-label="Analyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technologies" class="md-nav__link">
     Technologies
   </a>
-<nav aria-label="Technologies" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nfc-reader-acr122u">
+  
+    <nav class="md-nav" aria-label="Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfc-reader-acr122u" class="md-nav__link">
     NFC Reader ACR122U
   </a>
-<nav aria-label="NFC Reader ACR122U" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rfid">
+  
+    <nav class="md-nav" aria-label="NFC Reader ACR122U">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rfid" class="md-nav__link">
     RFID
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pyscard-librairie-python-smart-card">
+        
+          <li class="md-nav__item">
+  <a href="#pyscard-librairie-python-smart-card" class="md-nav__link">
     Pyscard - Librairie Python Smart card
   </a>
-<nav aria-label="Pyscard - Librairie Python Smart card" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installation">
+  
+    <nav class="md-nav" aria-label="Pyscard - Librairie Python Smart card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
     Installation
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#swig">
+        
+          <li class="md-nav__item">
+  <a href="#swig" class="md-nav__link">
     SWIG
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#polar-accesslink-api">
+        
+          <li class="md-nav__item">
+  <a href="#polar-accesslink-api" class="md-nav__link">
     Polar Accesslink API
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#environnement-de-developpement">
+        
+          <li class="md-nav__item">
+  <a href="#environnement-de-developpement" class="md-nav__link">
     Environnement de développement
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modele-de-donnees">
-    Modèle de données
-  </a>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse-fonctionnelle">
+      
+        <li class="md-nav__item">
+  <a href="#analyse-fonctionnelle" class="md-nav__link">
     Analyse fonctionnelle
   </a>
-<nav aria-label="Analyse fonctionnelle" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interface">
+  
+    <nav class="md-nav" aria-label="Analyse fonctionnelle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
     Interface
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fonctionnalites">
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnalites" class="md-nav__link">
     Fonctionnalités
   </a>
-<nav aria-label="Fonctionnalités" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inscription">
+  
+    <nav class="md-nav" aria-label="Fonctionnalités">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inscription" class="md-nav__link">
     Inscription
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authentification">
+        
+          <li class="md-nav__item">
+  <a href="#authentification" class="md-nav__link">
     Authentification
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enregistrement">
+        
+          <li class="md-nav__item">
+  <a href="#enregistrement" class="md-nav__link">
     Enregistrement
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cas-dutilisation">
+        
+          <li class="md-nav__item">
+  <a href="#cas-dutilisation" class="md-nav__link">
     Cas d'utilisation
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#analyse-organique">
+      
+        <li class="md-nav__item">
+  <a href="#analyse-organique" class="md-nav__link">
     Analyse organique
   </a>
-<nav aria-label="Analyse organique" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#architecture">
+  
+    <nav class="md-nav" aria-label="Analyse organique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
     Architecture
   </a>
-<nav aria-label="Architecture" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arborescence-de-fichier">
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arborescence-de-fichier" class="md-nav__link">
     Arborescence de fichier
   </a>
-<nav aria-label="Arborescence de fichier" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#documentationmd">
+  
+    <nav class="md-nav" aria-label="Arborescence de fichier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentationmd" class="md-nav__link">
     documentation.md
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#logbookmd">
+        
+          <li class="md-nav__item">
+  <a href="#logbookmd" class="md-nav__link">
     logbook.md
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#authorizationpy">
+        
+          <li class="md-nav__item">
+  <a href="#authorizationpy" class="md-nav__link">
     authorization.py
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#readpy">
+        
+          <li class="md-nav__item">
+  <a href="#acesslinkpy" class="md-nav__link">
+    acesslink.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsdaily_activitypy" class="md-nav__link">
+    endpoints/daily_activity.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsdaily_activity_transactionpy" class="md-nav__link">
+    endpoints/daily_activity_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsphysical_infopy" class="md-nav__link">
+    endpoints/physical_info.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointsphysical_info_transactionpy" class="md-nav__link">
+    endpoints/physical_info_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstraining_datapy" class="md-nav__link">
+    endpoints/training_data.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstraining_data_transactionpy" class="md-nav__link">
+    endpoints/training_data_transaction.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointspull_notifications" class="md-nav__link">
+    endpoints/pull_notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstransactionspy" class="md-nav__link">
+    endpoints/transactions.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readpy" class="md-nav__link">
     read.py
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+          <li class="md-nav__item">
+  <a href="#configyml" class="md-nav__link">
+    config.yml
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    requirements.txt
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#conclusion">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
     Conclusion
   </a>
-<nav aria-label="Conclusion" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ameliorations-possibles">
+  
+    <nav class="md-nav" aria-label="Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ameliorations-possibles" class="md-nav__link">
     Améliorations possibles
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bilan-personnel">
+        
+          <li class="md-nav__item">
+  <a href="#bilan-personnel" class="md-nav__link">
     Bilan personnel
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
 <h1 id="documentation-technique">Documentation technique</h1>
 <h2 id="rappel-du-cahier-des-charges">Rappel du cahier des charges</h2>
 <h3 id="introduction">Introduction</h3>
-<p>Dans le cadre du 2ème travail de semestre, j'ai décidé d'effectuer un projet qui me sera très utile pour le travail de diplôme. L'idée serait de faire une application en python qui récupère des données d'entrainement avec l'API Polar en fonction de la carte RFID qui est détécté.</p>
+<p>Dans le cadre du 2ème travail de semestre, j'ai décidé d'effectuer un projet qui me sera très utile pour le travail de diplôme. L'idée serait de faire une application en python qui récupère des données d'entrainement avec l'API Polar en fonction de la carte RFID qui est détecté.</p>
 <h4 id="but-du-projet">But du projet</h4>
 <p>Le but de ce projet est de me préparer au maximum pour le travail de diplôme. C'est pour cela que j'ai décidé de mettre ensemble 2 technologies que je n'ai pas encore beaucoup utilisé et qui sont essentielles pour mon travail de diplôme. </p>
 <p>Pour ce projet, uniquement les scripts python permettant de traiter les données voulues seront effectués. La partie interface de l'application finale est réalisée dans le cadre d'un autre cours.</p>
@@ -569,28 +1019,30 @@
 <li>NFC Reader ACR122U</li>
 <li>Polar Accesslink API</li>
 </ul>
-<div style="page-break-before:always"></div>
+<DIV STYLE="page-break-before:always"></DIV>
+
 <h5 id="nfc-reader-acr122u">NFC Reader ACR122U</h5>
-<p>Le lecteur NFC ACR122U est un appareil permettant de lire et d'écrire sur des cartes sans contact. Il est basé sur la technologie Mifare 13,56 MHz (RFID) et suit les standard de la norme ISO 18092. L'ACR122U est développé et vendu par ACS ltd .</p>
+<p>Le lecteur NFC ACR122U est un appareil permettant de lire et d'écrire sur des cartes sans contact. Il est basé sur la technologie Mifare 13,56 MHz (RFID) et suit les standards de la norme ISO 18092. L'ACR122U est développé et vendu par ACS ltd .</p>
 <p>Pour pouvoir utiliser ce lecteur, j'ai utilisé la librairie <em>pyscard</em> qui me permet de récupérer les infos des cartes à puces que le lecteur lit</p>
-<p><img alt="Image title" src="../images/acr122u.png" width="300"/></p>
+<p><img alt="Image title" src="../images/acr122u.png" width="300" /></p>
 <h6 id="rfid">RFID</h6>
 <p><strong>Qu'est-ce que la technologie RFID ??</strong></p>
 <p>RFID (Radio Frequency Identification), est une technologie qui permet d'enregistrer des données sur un support et de les récupérer à distance. Elle est apparue dans les années 1940 et était utilisée uniquement par l'armée pour l'identification des avions de guerre qui entrait dans l'espace aérien du Royaume-Uni. Elle s'est ensuite répandue dans différents secteurs industriels à partir des années 1980.</p>
 <p><strong>Comment fonctionne la RFID ?</strong></p>
-<p>Les étiquettes RFID, sont composées d'une puce RFID et d'une antenne et sont collées sur un produit. Elles enregistrent les données et avec un lecteur électromagnétique on peut ensuite lire les ondes radio présentes sur la puces RFID grâce à l'antenne.</p>
+<p>Les étiquettes RFID, sont composées d'une puce RFID et d'une antenne et sont collées sur un produit. Elles enregistrent les données et avec un lecteur électromagnétique on peut ensuite lire les ondes radio présentes sur la puce RFID grâce à l'antenne.</p>
 <p><strong>Pourquoi utiliser RFID</strong></p>
 <p>RFID est un système de traçabilité. A l'aide d'une seule puce, il est possible de tracer les produits pendant tout le processus de production, de transport et de distribution, voire même jusqu'à leur fin de vie.</p>
-<p>Dans le cadre de mon projet, RFID est une solution adéquat pour gérer les entrées/sorties des clients dans la salle d'entrainement.</p>
-<div style="page-break-before:always"></div>
+<p>Dans le cadre de mon projet, RFID est une solution adéquate pour gérer les entrées/sorties des clients dans la salle d'entrainement.</p>
+<DIV STYLE="page-break-before:always"></DIV>
+
 <p><strong>Différences entre RFID et NFC</strong></p>
-<p><img alt="RFIDVSNFC" src="../images/rfid_vs_nfc.jpg" width="500"/></p>
+<p><img alt="RFIDVSNFC" src="../images/rfid_vs_nfc.jpg" width="500" /></p>
 <p>Dans le cadre de mon projet, j'utilise parfois le terme NFC. La technologie NFC (Near Field Communication) est un dérivé de la RFID qui a commencé à être utilisé dès 2011. Le NFC repose sur le même concept que la RFID. C'est une technologie qui fonctionne avec une puce permettant d'échanger des données entre un lecteur et n'importe quel terminal avec un simple rapprochement ou contact entre les deux objets.</p>
 <p>La communication sans fil ne fonctionne qu'à courte portée et haute fréquence, une distance d'environ 10cm. La technologie NFC se retrouve dans la plupart des smartphones, consoles de jeux ou cartes bancaires. Le lecteur de carte que j'utilise fonctionne à l'aide de cette technologie également.</p>
-<p>Les principales différence entre RFID et NFC résident dans la portée plus courte et sécurisée pour NFC (10cm) contre jusqu'à 10m pour RFID. La technologie NFC peut transmettre toute sorte de données contre RFID qui ne transmet que l'ID. La lecture fait, quand à elle, défaut à la technologie NFC qui ne peut lire qu'une puce à la fois ce qui peut limiter ses cas d'utilisation.</p>
+<p>Les principales différences entre RFID et NFC résident dans la portée plus courte et sécurisée pour NFC (10cm) contre jusqu'à 10m pour RFID. La technologie NFC peut transmettre toute sorte de données contre RFID qui ne transmet que l'ID. La lecture fait, quant à elle, défaut à la technologie NFC qui ne peut lire qu'une puce à la fois ce qui peut limiter ses cas d'utilisation.</p>
 <h5 id="pyscard-librairie-python-smart-card">Pyscard - Librairie Python Smart card</h5>
-<p>Pyscard est un module python qui permet d'utiliser les carte à puce (PC/SC) avec python. Il donne accès à plusieurs classes et fonctions donnant accès aux cartes et aux lecteurs.  </p>
-<p><img alt="Pyscard Architecture" src="../images/pyscard.jpg" width="300"/></p>
+<p>Pyscard est un module python qui permet d'utiliser les cartes à puce (PC/SC) avec python. Il donne accès à plusieurs classes et fonctions donnant accès aux cartes et aux lecteurs.  </p>
+<p><img alt="Pyscard Architecture" src="../images/pyscard.jpg" width="250" /></p>
 <p>Architecture pyscard :</p>
 <ul>
 <li>smartcard.scard est un module d'extension enveloppant l'API WinSCard (Les composants de base smartcard) aussi connue sous le nom PC/SC (Personal computer / Smart Card)</li>
@@ -599,10 +1051,10 @@
 <h6 id="installation">Installation</h6>
 <p>Pour installer la librairie <strong>pyscard</strong> sur Windows 10, il faut au préalable installer <a href="http://www.swig.org/">SWIG</a> et l'ajouter directement au PATH. Il faut ensuite installer Visual C++ version 14.0 ou plus récente (directement installable depuis le Visual Studio Installer).</p>
 <h5 id="swig">SWIG</h5>
-<p><img alt="Swig" src="../images/swig.png"/></p>
+<p><img alt="Swig" src="../images/swig.png" /></p>
 <p>SWIG est un outil logiciel open source qui permet de connecter des logiciels ou librairies écrites en C/C++ avec des langages de scripts tels que : <em>Perl</em>, <em>Python</em>, <em>Ruby</em>, <em>PHP</em> ou d'autres langages de programmation comme <em>Java</em> ou <em>C#</em>.</p>
 <h5 id="polar-accesslink-api">Polar Accesslink API</h5>
-<p><img alt="Polar" src="../images/polar.png"/></p>
+<p><img alt="Polar" src="../images/polar.png" /></p>
 <p>Accesslink est une API qui donne accès aux données d'entrainement et d'activitée journalière enregistrés par les appareils Polar. Pour pouvoir l'utiliser il est nécessaire de posséder un compte Polar Flow afin de créer un client sur <a href="admin.polaraccesslink.com">admin.polaraccesslink.com</a> qui nous donnera accès à l'API. </p>
 <p>Accesslink utilise <a href="https://oauth.net/">OAuth2</a> comme protocole d'authentification. Les utilisateurs enregistrés ont besoin de s'authentifier pour pouvoir avoir accès aux données.</p>
 <p>Fonctionnalités de base d'Accesslink :</p>
@@ -640,92 +1092,155 @@
 </tr>
 <tr>
 <td>Annexes</td>
-<td>Contients des exemples et des détails sur l'interface de l'application</td>
+<td>Contient des exemples et des détails sur l'interface de l'application</td>
 </tr>
 </tbody>
 </table>
 <h4 id="environnement-de-developpement">Environnement de développement</h4>
 <p>Pour l'environnement de développement, j'ai utilisé Visual Studio Code.</p>
-<h4 id="modele-de-donnees">Modèle de données</h4>
 <h2 id="analyse-fonctionnelle">Analyse fonctionnelle</h2>
 <h3 id="interface">Interface</h3>
-<p>La partie réalisée lors du travail de semestre ne possède pas d'interface. Le programme récupère et sauve certaines données mais n'affiche rien. La partie "Affichage" de mon projet à été réalisé dans le projet du cours PDA.</p>
+<p>La partie réalisée lors du travail de semestre ne possède pas d'interface. Le programme récupère et sauve certaines données mais n'affiche rien. La partie "Affichage" de mon projet a été réalisé dans le projet du cours PDA.</p>
 <h3 id="fonctionnalites">Fonctionnalités</h3>
 <h4 id="inscription">Inscription</h4>
-<p>Lors de l'inscription d'un nouveau client, il remplit un formulaire, puis une fois le formulaire remplit le coach doit scanner une carte RFID. Le lecteur va lire la carte et l'ID de la carte sera attribué au compte client du nouveau inscrit.</p>
+<p>Lors de l'inscription d'un nouveau client, il remplit un formulaire, puis une fois le formulaire remplit le coach doit scanner une carte RFID. Le lecteur va lire la carte et l'ID de la carte sera attribué au compte client du nouvel inscrit.</p>
 <h4 id="authentification">Authentification</h4>
 <p>L'application permet de s'authentifier à l'aide du lecteur et d'une carte RFID. L'ID de la carte est enregistré dans la base de données. Si l'authentification est réussite, l'utilisateur peut utiliser une montre Polar pour son entrainement. A la fin de l'entrainement, le client scanne sa carte RFID avant de partir. Si la carte est reconnue, l'application va chercher les dernières données d'entrainement disponible à l'aide de l'API Polar AccessLink.</p>
 <h4 id="enregistrement">Enregistrement</h4>
-<p>Lorsque des données d'entrainement sont récupérés suite à la séance d'un client, elles sont automatiquement enregistrés dans la base de données et relié directement au client concerné.</p>
+<p>Lorsque des données d'entrainement sont récupérés suite à la séance d'un client, elles sont automatiquement enregistrées dans la base de données et relié directement au client concerné.</p>
 <h4 id="cas-dutilisation">Cas d'utilisation</h4>
-<p>A l'arrivée d'un nouveau client, il doit s'inscrire via un formulaire. Une fois le formulaire renseigné, le coach doit scanner une nouvelle carte RFID à l'aide du lecteur. La carte sera enregistrer avec le compte du nouveau client en base de données.</p>
-<p>Lorsqu'un client vient s'entrainer il doit s'authentifier à l'entrée à l'aide de sa "carte de membre" (la carte RFID remise lors de l'inscription). Une fois entré, le client peut se munir d'une des montres Polar mient à disposition pour son entrainement.</p>
-<p>A la fin de son entrainement, juste avant de partir, le client badge à la sortie avec sa carte. Si la carte est reconnue, les dernières données d'entrainements sont récupérés à l'aide de l'API Polar. Toutes les données voulues sont enregistrés dans la base de données et sont reliés directement au client concerné.</p>
+<p>A l'arrivée d'un nouveau client, il doit s'inscrire via un formulaire. Une fois le formulaire renseigné, le coach doit scanner une nouvelle carte RFID à l'aide du lecteur. La carte sera enregistrée avec le compte du nouveau client en base de données.</p>
+<p>Lorsqu'un client vient s'entrainer il doit s'authentifier à l'entrée à l'aide de sa "carte de membre" (la carte RFID remise lors de l'inscription). Une fois entré, le client peut se munir d'une des montres Polar misent à disposition pour son entrainement.</p>
+<p>A la fin de son entrainement, juste avant de partir, le client badge à la sortie avec sa carte. Si la carte est reconnue, les dernières données d'entrainements sont récupérées à l'aide de l'API Polar. Toutes les données voulues sont enregistrées dans la base de données et sont reliés directement au client concerné.</p>
 <h2 id="analyse-organique">Analyse organique</h2>
 <h3 id="architecture">Architecture</h3>
 <h4 id="arborescence-de-fichier">Arborescence de fichier</h4>
-<div class="highlight"><pre><span></span><code>+-- docs
-|   +-- documentation.md
-|   +-- logbook.md
-+-- mkdocs.yml
-</code></pre></div>
+<p><img alt="Arborescence" src="../images/arborescence.PNG" /></p>
 <h5 id="documentationmd">documentation.md</h5>
 <p>Fichier Markdown contenant la documentation technique du projet.</p>
 <h5 id="logbookmd">logbook.md</h5>
 <p>Fichier Markdown contenant le résumé journalier du travail effectué.</p>
 <h5 id="authorizationpy">authorization.py</h5>
 <p>Script python qui permet d'authentifier un compte Polar pour avoir accès à l'API </p>
-<p><img alt="Script Authorization" src="../images/authorization.PNG"/></p>
+<p><img alt="Script Authorization" src="../images/authorization.PNG" /></p>
 <p><em>Token généré avec l'id de l'utilisateur, on essaye ensuite de l'enregistrer avec l'API accesslink pour avoir accès aux données</em></p>
+<DIV STYLE="page-break-before:always"></DIV>
+
+<h5 id="acesslinkpy">acesslink.py</h5>
+<p>Objet python qui enveloppe toutes les fonctionnalitées de l'API Polar</p>
+<p><img alt="Accesslink Object" src="../images/accesslink.PNG" /></p>
+<p>Pour chaque demande effectuable avec l'API (pour le retour de différente donnée) un objet a été créé. L'objet <em>Accesslink</em> récupère les données avec tous les endpoints qui permettent les transactions avec l'API.</p>
+<h5 id="endpointsdaily_activitypy">endpoints/daily_activity.py</h5>
+<p>Objet qui permet de récupérer toutes les données concernant l'activitée journalière</p>
+<p><img alt="Daily activity" src="../images/dailyactivity.PNG" /></p>
+<h5 id="endpointsdaily_activity_transactionpy">endpoints/daily_activity_transaction.py</h5>
+<p>Objet pour l'activitée journalière qui effectue les demandes à l'API pour récupérer les données souhaitées.</p>
+<p><img alt="Daily activity transaction" src="../images/dailyactivitytransaction.PNG" /></p>
+<DIV STYLE="page-break-before:always"></DIV>
+
+<h5 id="endpointsphysical_infopy">endpoints/physical_info.py</h5>
+<p>Objet qui permet de récupérer toutes les données concernant les informations physiques</p>
+<p><img alt="Physical Info" src="../images/physicalinfo.PNG" /></p>
+<h5 id="endpointsphysical_info_transactionpy">endpoints/physical_info_transaction.py</h5>
+<p>Objet pour les informations physiques qui effectue les demandes à l'API pour récupérer les données souhaitées.</p>
+<p><img alt="Physical Info Transaction" src="../images/physicalinfotransaction.PNG" /></p>
+<DIV STYLE="page-break-before:always"></DIV>
+
+<h5 id="endpointstraining_datapy">endpoints/training_data.py</h5>
+<p>Objet qui permet de récupérer toutes les données concernant les données d'entrainements</p>
+<p><img alt="Training data" src="../images/trainingdata.PNG" /></p>
+<DIV STYLE="page-break-before:always"></DIV>
+
+<h5 id="endpointstraining_data_transactionpy">endpoints/training_data_transaction.py</h5>
+<p>Objet pour les données d'entrainements qui effectue les demandes à l'API pour récupérer les données souhaitées.</p>
+<p><img alt="Training data" src="../images/trainingdatatransaction.PNG" /></p>
+<h5 id="endpointspull_notifications">endpoints/pull_notifications</h5>
+<p>Objet qui permet de récupérer la liste des données disponibles.</p>
+<p><img alt="Pull Notifications" src="../images/pullnotif.PNG" /></p>
+<h5 id="endpointstransactionspy">endpoints/transactions.py</h5>
+<p>Objet qui permet de commit une transaction avec l'API.</p>
+<p><img alt="Transaction" src="../images/transaction.PNG" /></p>
+<DIV STYLE="page-break-before:always"></DIV>
+
 <h5 id="readpy">read.py</h5>
 <p>Script python qui permet de lire les données sur une carte RFID</p>
-<p><img alt="Read Script" src="../images/read_card.PNG"/></p>
+<p><img alt="Read Script" src="../images/read_card.PNG" /></p>
+<h5 id="configyml">config.yml</h5>
+<p>Fichier YAML contenant la configuration du client pour avoir accès aux données avec l'API Polar. Il Contient :</p>
+<ul>
+<li>L'id de l'utilisateur </li>
+<li>L'id du client (Pour l'accès)</li>
+<li>Le secret du client </li>
+<li>Le token d'accès (Il est généré avec le fichier authorization.py)</li>
+</ul>
+<h5 id="requirementstxt">requirements.txt</h5>
+<p>Fichier contenant toutes les librairies/modules nécessaires pour le lancement de l'application. Pour l'utilisation :
+<div class="highlight"><pre><span></span><code>pip install -r requirements.txt
+</code></pre></div></p>
 <h2 id="conclusion">Conclusion</h2>
 <h3 id="ameliorations-possibles">Améliorations possibles</h3>
-<p>Dans le cadre du travail de semestre, j'ai totalement dissocié la partie données avec l'utilisation de l'API Polar et du lecteur RFID de l'interface graphique. L'interface graphique permet de relier tous les différents scripts que j'ai fait pour en faire un application fonctionnelle. La partie interface à été faite dans le cadre du cours PDA, il faudrait donc mettre ces 2 parties ensembles.</p>
-<p>Une autre amélioration à explorer serait d'ouvrir l'application à tous les types de montres connectés. Pour le moment uniquement les montres Polar sont acceptées (a cause de l'utilisation de l'API Polar). </p>
+<p>Dans le cadre du travail de semestre, j'ai totalement dissocié la partie donnée avec l'utilisation de l'API Polar et du lecteur RFID de l'interface graphique. L'interface graphique permet de relier tous les différents scripts que j'ai fait pour en faire une application fonctionnelle. La partie interface a été faite dans le cadre du cours PDA, il faudrait donc mettre ces 2 parties ensembles.</p>
+<p>Une autre amélioration à explorer serait d'ouvrir l'application à tous les types de montres connectés. Pour le moment uniquement les montres Polar sont acceptées (à cause de l'utilisation de l'API Polar). </p>
 <p>Il faudrait également regarder pour avoir la possibilité d'utiliser la montre du client et pas une montre mise à disposition par le coach comme c'est le cas pour l'instant.</p>
 <h3 id="bilan-personnel">Bilan personnel</h3>
-<p>Ce projet à été très bénéfique pour moi, je n'avais encore jamais utilisé l'API Polar ou encore un lecteur NFC. J'ai rencontré pas mal de problème et ça m'a permis de préparer pas mal de point pour mon travail de diplôme. J'ai trouvé très intéressant de travailler sur ces points car ils sont essentiels pour mon travail de diplôme et j'espère vraiment pouvoir avoir quelque chose de fonctionnel à la fin.</p>
-</article>
-</div>
-</div>
-</main>
-<footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Next: Logbook" class="md-footer__link md-footer__link--next" href="../logbook/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+<p>Ce projet a été très bénéfique pour moi, je n'avais encore jamais utilisé l'API Polar ou encore un lecteur NFC. J'ai rencontré pas mal de problème et ça m'a permis de préparer pas mal de point pour mon travail de diplôme. J'ai trouvé très intéressant de travailler sur ces points car ils sont essentiels pour mon travail de diplôme et j'espère vraiment pouvoir avoir quelque chose de fonctionnel à la fin.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="../logbook/" class="md-footer__link md-footer__link--next" aria-label="Next: Logbook" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Next
               </span>
               Logbook
             </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-            Material for MkDocs
-          </a>
- ... <a class="link--pdf-download" download href="../pdf/document.pdf" title="PDF">download PDF</a></div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
-<script src="../assets/javascripts/bundle.b1047164.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
 </html>
