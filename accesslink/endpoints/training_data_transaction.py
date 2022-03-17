@@ -21,6 +21,14 @@ class TrainingDataTransaction(Transaction):
         """
         return self._get(endpoint=None, url=url,
                          access_token=self.access_token)
+    
+    def get_heart_rate_zones(self, url):
+        """Retrieve heart rate zones in training session
+
+        :param url: url of the exercise entity
+        """
+        return self._get(endpoint=None, url=url+"/heart-rate-zones",
+                         access_token=self.access_token)
 
     def get_gpx(self, url):
         """Retrieve training session summary data in GPX format
@@ -39,14 +47,6 @@ class TrainingDataTransaction(Transaction):
         return self._get(endpoint=None, url=url+"/tcx",
                          access_token=self.access_token,
                          headers={"Accept": "application/vnd.garmin.tcx+xml"})
-
-    def get_heart_rate_zones(self, url):
-        """Retrieve heart rate zones in training session
-
-        :param url: url of the exercise entity
-        """
-        return self._get(endpoint=None, url=url+"/heart-rate-zones",
-                         access_token=self.access_token)
 
     def get_available_samples(self, url):
         """Retrieve list of urls to available samples in training session

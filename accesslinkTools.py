@@ -16,7 +16,7 @@ CONFIG_FILENAME = "config.yml"
 
 
 class PolarAccessLink(object):
-    """Example application for Polar Open AccessLink v3."""
+    """All functionalities for Polar Open AccessLink v3."""
 
     def __init__(self):
         self.config = load_config(CONFIG_FILENAME)
@@ -31,7 +31,9 @@ class PolarAccessLink(object):
         self.running = True
         self.show_menu()
 
+    
     def show_menu(self):
+        #Display menu for all actions available
         while self.running:
             print("\nChoose an option:\n" +
                   "-----------------------\n" +
@@ -43,6 +45,7 @@ class PolarAccessLink(object):
             self.get_menu_choice()
 
     def get_menu_choice(self):
+        #Get the user input for menu choice
         choice = input("> ")
         {
             "1": self.get_user_information,
@@ -52,11 +55,14 @@ class PolarAccessLink(object):
         }.get(choice, self.get_menu_choice)()
 
     def get_user_information(self):
+        #Get user information 
         user_info = self.accesslink.users.get_information(user_id=self.config["user_id"],
                                                           access_token=self.config["access_token"])
         pretty_print_json(user_info)
 
+
     def check_available_data(self):
+        #Check if new data are available
         available_data = self.accesslink.pull_notifications.list()
 
         if not available_data:
@@ -75,6 +81,7 @@ class PolarAccessLink(object):
                 self.get_physical_info()
 
     def revoke_access_token(self):
+        #Revoke access to API (delete the token from the config file config.yml)
         self.accesslink.users.delete(user_id=self.config["user_id"],
                                      access_token=self.config["access_token"])
 
@@ -90,6 +97,7 @@ class PolarAccessLink(object):
         self.running = False
 
     def get_exercises(self):
+        #Get new exercises that were made by user
         transaction = self.accesslink.training_data.create_transaction(user_id=self.config["user_id"],
                                                                        access_token=self.config["access_token"])
         if not transaction:
@@ -108,6 +116,7 @@ class PolarAccessLink(object):
         transaction.commit()
 
     def get_daily_activity(self):
+        #Get all daily activity info
         transaction = self.accesslink.daily_activity.create_transaction(user_id=self.config["user_id"],
                                                                         access_token=self.config["access_token"])
         if not transaction:
@@ -125,6 +134,7 @@ class PolarAccessLink(object):
         transaction.commit()
 
     def get_physical_info(self):
+        #Get the physical info 
         transaction = self.accesslink.physical_info.create_transaction(user_id=self.config["user_id"],
                                                                        access_token=self.config["access_token"])
         if not transaction:

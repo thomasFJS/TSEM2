@@ -59,3 +59,6 @@ Malade (Covid-19)
 
 ## Jeudi 10 Mars 2022
 Le rendu du projet est fixé à la semaine prochaine. J'ai fait l'update du firmware de la montre Polar. En essayant de lancer le programme chez moi, je me rends compte que je n'avais pas prit en compte quelques "requirements" pour pouvoir utiliser la librairie **pyscard**. Pour pouvoir installer pyscard, il faut préalablement installer [Swig](http://www.swig.org/download.html) et l'ajouter dans le PATH (Variables d'envirronements). Swig étant un outil qui permet de connecter des librairies écrites en C ou en C++ à d'autres langages comme le Python
+
+## Jeudi 17 Mars 2022
+Dernier jour pour ce deuxième travail de semestre, j'effectue les derniers ajustements sur la documentation technique. Ce travail de semestre a été bien plus utile que le premier car j'ai réussi à préparer plusieurs classes Python que je pourrai réutiliser lors de mon travail de diplôme. En travaillant là-dessus, je suis parvenu a éclaircir la plupart des points d'inquiétude que j'avais en vue du travail de diplôme.

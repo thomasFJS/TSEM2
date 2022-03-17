@@ -84,7 +84,21 @@ Pour installer la librairie **pyscard** sur Windows 10, il faut au préalable in
 SWIG est un outil logiciel open source qui permet de connecter des logiciels ou librairies écrites en C/C++ avec des langages de scripts tels que : *Perl*, *Python*, *Ruby*, *PHP* ou d'autres langages de programmation comme *Java* ou *C#*.
 
 
+##### MySQL Connector/Python
+![MySQL Connector](./images/mysql.png){width="300"}
 
+MySQL Connector permet aux programmes Python d'accéder aux bases de données MySQL. Je l'ai utilisé dans mon projet, pour la vérification des cartes de membres.
+
+###### Installation
+MySQL Connector vient directement avec l'installation de Python et peut être importé dans n'importe quel script avec :
+
+```
+import mysql.connector
+```
+##### OAuth 2.0
+![OAuth](./images/oauth.jpg)
+
+OAuth est un protocole libre qui permet d'autoriser un site web, logiciel ou une application à utiliser l'API sécurisée d'un autre site web. L'API Polar utilise notamment ce protocole pour gérer les authentifications.
 ##### Polar Accesslink API 
 ![Polar](./images/polar.png)
 
@@ -143,73 +157,97 @@ Fichier Markdown contenant le résumé journalier du travail effectué.
 ##### authorization.py
 Script python qui permet d'authentifier un compte Polar pour avoir accès à l'API 
 
-![Script Authorization](./images/authorization.PNG)
+![Script Authorization](./images/authorization.PNG){width="500"}
 
 *Token généré avec l'id de l'utilisateur, on essaye ensuite de l'enregistrer avec l'API accesslink pour avoir accès aux données*
-
-
-<DIV STYLE="page-break-before:always"></DIV>
 
 ##### acesslink.py 
 Objet python qui enveloppe toutes les fonctionnalitées de l'API Polar
 
-![Accesslink Object](./images/accesslink.PNG)
+![Accesslink Object](./images/accesslink.PNG){width="500"}
 
-Pour chaque demande effectuable avec l'API (pour le retour de différente donnée) un objet a été créé. L'objet *Accesslink* récupère les données avec tous les endpoints qui permettent les transactions avec l'API.
+Pour chaque demande effectuable avec l'API (pour le retour de différente donnée) un objet a été créé. L'objet *Accesslink* récupère les données avec tous les endpoints qui permettent les transactions avec l'API. Il gére également l'authentification pour avoir accès à l'API.
+
+<DIV STYLE="page-break-before:always"></DIV>
 
 ##### endpoints/daily_activity.py
-Objet qui permet de récupérer toutes les données concernant l'activitée journalière
+Objet qui permet de récupérer toutes les données concernant l'activitée journalière, il utilise l'objet DailyActivityTransaction pour effectuer la transaction avec l'API
 
-![Daily activity](./images/dailyactivity.PNG)
+![Daily activity](./images/dailyactivity.PNG){width="500"}
 
 ##### endpoints/daily_activity_transaction.py
 Objet pour l'activitée journalière qui effectue les demandes à l'API pour récupérer les données souhaitées.
 
-![Daily activity transaction](./images/dailyactivitytransaction.PNG)
+![Daily activity transaction](./images/dailyactivitytransaction.PNG){width="500"}
+
 
 <DIV STYLE="page-break-before:always"></DIV>
 
 ##### endpoints/physical_info.py
-Objet qui permet de récupérer toutes les données concernant les informations physiques
+Objet qui permet de récupérer toutes les données concernant les informations physiques, il utilise l'objet PhysicalInfoTransaction pour effectuer la transaction avec l'API
 
-![Physical Info](./images/physicalinfo.PNG)
+![Physical Info](./images/physicalinfo.PNG){width="500"}
 
 ##### endpoints/physical_info_transaction.py
 Objet pour les informations physiques qui effectue les demandes à l'API pour récupérer les données souhaitées.
 
-![Physical Info Transaction](./images/physicalinfotransaction.PNG)
+![Physical Info Transaction](./images/physicalinfotransaction.PNG){width="500"}
+
 
 <DIV STYLE="page-break-before:always"></DIV>
 
 ##### endpoints/training_data.py
-Objet qui permet de récupérer toutes les données concernant les données d'entrainements
+Objet qui permet de récupérer toutes les données concernant les données d'entrainements, il utilise l'objet TrainingDataTransaction pour effectuer la transaction avec l'API.
 
-![Training data](./images/trainingdata.PNG)
+![Training data](./images/trainingdata.PNG){width="500"}
 
-<DIV STYLE="page-break-before:always"></DIV>
+
 
 ##### endpoints/training_data_transaction.py
-Objet pour les données d'entrainements qui effectue les demandes à l'API pour récupérer les données souhaitées.
+Objet pour les données d'entrainements qui effectue les demandes à l'API pour récupérer les données souhaitées. Il peut récupérer :
 
-![Training data](./images/trainingdatatransaction.PNG)
+* La liste des exercices effectués
+* Un résumé des séances
+* Les différentes zones de rythme cardiaque
+* Un résumé des séances en format .gpx ou .tcx
+
+![Training data](./images/trainingdatatransaction.PNG){width="500"}
 
 
 ##### endpoints/pull_notifications
 Objet qui permet de récupérer la liste des données disponibles.
 
-![Pull Notifications](./images/pullnotif.PNG)
+![Pull Notifications](./images/pullnotif.PNG){width="500"}
 
 ##### endpoints/transactions.py
-Objet qui permet de commit une transaction avec l'API.
+Objet parent pour toutes les transactions qui seront effectuées avec l'API Polar.
 
-![Transaction](./images/transaction.PNG)
+![Transaction](./images/transaction.PNG){width="500"}
+
+<DIV STYLE="page-break-before:always"></DIV>
+
+##### endpoints/resource.py
+Objet parent qui permet de passer premièrement par l'authentification OAuth avant d'effectuer des actions avec l'API. 
+
+![Resource](./images/resource.PNG)
+
+##### accesslinkTools.py
+Objet AccesslinkTools qui regroupe toutes les fonctionnalités liées à l'API. Il utilise les endpoints créé (décrit ci-dessus) pour effectuer les transactions et récupérer les données.
+
+![Accesslink Tools](./images/accesslinktools.PNG){width="500"}
 
 <DIV STYLE="page-break-before:always"></DIV>
 
 ##### read.py
-Script python qui permet de lire les données sur une carte RFID
+Script python qui permet de lire les données sur une carte RFID. Il compare l'ID de la carte scannée avec celles enregistrés en base, si la carte est reconnue l'utilisateur à accès aux fonctionnalitées de l'API Polar.
+ 
+Attente d'une carte, une fois détéctée, la connexion est établie :
+![Read Script](./images/read_card.PNG){width="500"}
 
-![Read Script](./images/read_card.PNG)
+Requête SQL pour vérifier si l'ID de la carte détéctée existe dans la base de données, si oui l'utilisateur à accès aux fonctionnalitées Polar :  
+![Read 2 Script](./images/read2.PNG){width="500"}
+
+
 
 ##### config.yml
 Fichier YAML contenant la configuration du client pour avoir accès aux données avec l'API Polar. Il Contient :
@@ -225,6 +263,8 @@ Fichier contenant toutes les librairies/modules nécessaires pour le lancement d
 pip install -r requirements.txt
 ```
 
+##### mkdocs.yml
+Fichier YAML contenant la configuration pour Mkdocs.
 
 ## Conclusion
 ### Améliorations possibles
@@ -236,4 +276,4 @@ Il faudrait également regarder pour avoir la possibilité d'utiliser la montre 
 
 
 ### Bilan personnel
-Ce projet a été très bénéfique pour moi, je n'avais encore jamais utilisé l'API Polar ou encore un lecteur NFC. J'ai rencontré pas mal de problème et ça m'a permis de préparer pas mal de point pour mon travail de diplôme. J'ai trouvé très intéressant de travailler sur ces points car ils sont essentiels pour mon travail de diplôme et j'espère vraiment pouvoir avoir quelque chose de fonctionnel à la fin.
+Ce projet a été très bénéfique pour moi, je n'avais encore jamais utilisé l'API Polar ou encore un lecteur NFC et j'ai maintenant à disposition pas mal d'objet Python que je peux directement réutiliser. J'ai rencontré pas mal de problème et ça m'a permis de préparer pas mal de point pour mon travail de diplôme. J'ai trouvé très intéressant de travailler sur ces points car ils sont essentiels pour mon travail de diplôme et j'espère vraiment pouvoir avoir quelque chose de fonctionnel à la fin.
